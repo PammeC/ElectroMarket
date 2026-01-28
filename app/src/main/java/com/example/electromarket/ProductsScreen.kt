@@ -32,13 +32,8 @@ data class Producto(
     val region: String // Cosina, Hogar, Tecnología
 )
 
-val verdeLima = Color(0xFF6DBE45)
-val rojoFresa = Color(0xFFF45B69)
-val amarilloMango = Color(0xFFFFD447)
-val naranjaBrillante = Color(0xFFF99E1A)
-val marronContorno = Color(0xFF5C3A1E)
-val verdeMango = Color(0xFF3D9A50)
-val verdePalido = Color(0xFFC9EAA6)
+// 🎨 Colores eliminados para usar MaterialTheme
+// val verdeLima, rojoFresa, etc. ahora son parte del Theme.
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -72,7 +67,7 @@ fun ProductsScreen(productoViewModel: ProductoViewModel, navController: NavContr
                                 .size(48.dp)
                                 .padding(end = 8.dp)
                         )
-                        Text("ElectroMarket", color = marronContorno)
+                        Text("ElectroMarket", color = MaterialTheme.colorScheme.primary, fontWeight = FontWeight.Bold)
                     }
                 },
                 actions = {
@@ -81,8 +76,8 @@ fun ProductsScreen(productoViewModel: ProductoViewModel, navController: NavContr
                             badge = {
                                 if (cantidadCarrito > 0) {
                                     Badge(
-                                        containerColor = rojoFresa,
-                                        contentColor = Color.White
+                                        containerColor = MaterialTheme.colorScheme.error,
+                                        contentColor = MaterialTheme.colorScheme.onError
                                     ) {
                                         Text(cantidadCarrito.toString())
                                     }
@@ -92,7 +87,7 @@ fun ProductsScreen(productoViewModel: ProductoViewModel, navController: NavContr
                             Icon(
                                 imageVector = Icons.Default.ShoppingCart,
                                 contentDescription = "Carrito",
-                                tint = verdeMango,
+                                tint = MaterialTheme.colorScheme.primary,
                                 modifier = Modifier.size(32.dp)
                             )
                         }
@@ -106,12 +101,12 @@ fun ProductsScreen(productoViewModel: ProductoViewModel, navController: NavContr
                         Icon(
                             imageVector = Icons.Default.ExitToApp,
                             contentDescription = "Cerrar sesión",
-                            tint = rojoFresa,
+                            tint = MaterialTheme.colorScheme.error,
                             modifier = Modifier.size(32.dp)
                         )
                     }
                 },
-                colors = TopAppBarDefaults.topAppBarColors(containerColor = verdePalido)
+                colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
             )
         },
         snackbarHost = { SnackbarHost(hostState = snackbarHostState) }
@@ -156,8 +151,8 @@ fun RegionSelector(regionActual: String, onRegionChange: (String) -> Unit) {
             Button(
                 onClick = { onRegionChange(region) },
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = if (region == regionActual) verdeLima else verdePalido,
-                    contentColor = Color.Black
+                    containerColor = if (region == regionActual) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surfaceVariant,
+                    contentColor = if (region == regionActual) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurfaceVariant
                 ),
                 shape = RoundedCornerShape(24.dp)
             ) {
@@ -192,13 +187,13 @@ fun ProductCard(producto: Producto, onAddToCart: () -> Unit) {
                 text = producto.nombre,
                 style = MaterialTheme.typography.titleMedium.copy(
                     fontWeight = FontWeight.Bold,
-                    color = marronContorno
+                    color = MaterialTheme.colorScheme.onSurface
                 )
             )
 
             Text(
                 text = "Precio: $${producto.precio} ",
-                style = MaterialTheme.typography.bodyMedium.copy(color = verdeMango)
+                style = MaterialTheme.typography.bodyMedium.copy(color = MaterialTheme.colorScheme.secondary, fontWeight = FontWeight.Bold)
             )
 
             Button(
@@ -206,7 +201,7 @@ fun ProductCard(producto: Producto, onAddToCart: () -> Unit) {
                 modifier = Modifier
                     .padding(top = 12.dp)
                     .fillMaxWidth(),
-                colors = ButtonDefaults.buttonColors(containerColor = naranjaBrillante)
+                colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary)
             ) {
                 Text("Agregar al carrito", color = Color.White)
             }

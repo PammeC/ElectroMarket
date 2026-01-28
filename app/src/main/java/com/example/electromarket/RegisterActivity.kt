@@ -17,6 +17,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -58,9 +59,7 @@ fun RegisterScreen(
     auth: FirebaseAuth,
     database: FirebaseDatabase
 ) {
-    val verdeLima = Color(0xFF6DBE45)
-    val rojoFresa = Color(0xFFF45B69)
-    val verdePalido = Color(0xFFC9EAA6)
+    // 🎨 Colores eliminados. Usando Theme.
 
     var name by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
@@ -75,7 +74,10 @@ fun RegisterScreen(
             .fillMaxSize()
             .background(
                 brush = Brush.verticalGradient(
-                    colors = listOf(verdeLima.copy(0.6f), verdePalido.copy(0.9f))
+                    colors = listOf(
+                        MaterialTheme.colorScheme.primary.copy(0.6f),
+                        MaterialTheme.colorScheme.secondaryContainer.copy(0.9f)
+                    )
                 )
             ),
         contentAlignment = Alignment.Center
@@ -94,7 +96,7 @@ fun RegisterScreen(
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Text("Registro", fontSize = 28.sp, color = verdeLima)
+                Text("Registro", fontSize = 28.sp, color = MaterialTheme.colorScheme.primary, fontWeight = FontWeight.Bold)
 
                 Spacer(modifier = Modifier.height(20.dp))
 
@@ -175,7 +177,7 @@ fun RegisterScreen(
                             }
                         }
                     },
-                    colors = ButtonDefaults.buttonColors(containerColor = verdeLima),
+                    colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary),
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(50.dp),
@@ -187,7 +189,7 @@ fun RegisterScreen(
                 Spacer(modifier = Modifier.height(12.dp))
 
                 TextButton(onClick = onLoginClick) {
-                    Text("¿Ya tienes una cuenta? Inicia sesión", color = rojoFresa)
+                    Text("¿Ya tienes una cuenta? Inicia sesión", color = MaterialTheme.colorScheme.secondary)
                 }
             }
         }
