@@ -32,6 +32,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.lifecycleScope
 import com.facebook.CallbackManager
+import com.example.electromarket.ui.theme.ElectroMarketTheme
 import com.google.android.libraries.identity.googleid.GetGoogleIdOption
 import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential
 import com.google.android.libraries.identity.googleid.GoogleIdTokenParsingException
@@ -71,17 +72,19 @@ class LoginActivity : ComponentActivity() {
         }
 
         setContent {
-            LoginScreen(
-                onLoginClick = { email, password ->
-                    loginWithEmailPassword(email, password)
-                },
-                onGoogleLoginClick = {
-                    loginGoogle()
-                },
-                onRegisterClick = {
-                    startActivity(Intent(this, RegisterActivity::class.java))
-                }
-            )
+            ElectroMarketTheme {
+                LoginScreen(
+                    onLoginClick = { email, password ->
+                        loginWithEmailPassword(email, password)
+                    },
+                    onGoogleLoginClick = {
+                        loginGoogle()
+                    },
+                    onRegisterClick = {
+                        startActivity(Intent(this, RegisterActivity::class.java))
+                    }
+                )
+            }
         }
     }
 
@@ -96,10 +99,11 @@ class LoginActivity : ComponentActivity() {
                 if (task.isSuccessful) {
                     updateUI(auth.currentUser)
                 } else {
+                    Log.e("LoginActivity", "Login error: ", task.exception)
                     Toast.makeText(
                         this,
-                        "Error: ${task.exception?.message}",
-                        Toast.LENGTH_SHORT
+                        "Error (${task.exception?.javaClass?.simpleName}): ${task.exception?.message}",
+                        Toast.LENGTH_LONG
                     ).show()
                 }
             }

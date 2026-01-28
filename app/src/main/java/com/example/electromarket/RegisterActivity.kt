@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import com.example.electromarket.ui.theme.ElectroMarketTheme
 
 class RegisterActivity : ComponentActivity() {
 
@@ -36,18 +37,20 @@ class RegisterActivity : ComponentActivity() {
         database = FirebaseDatabase.getInstance("https://electromarketdb-9cefc-default-rtdb.firebaseio.com/")
 
         setContent {
-            RegisterScreen(
-                onRegisterSuccess = {
-                    startActivity(Intent(this, MainActivity::class.java))
-                    finish()
-                },
-                onLoginClick = {
-                    startActivity(Intent(this, LoginActivity::class.java))
-                    finish()
-                },
-                auth = auth,
-                database = database
-            )
+            ElectroMarketTheme {
+                RegisterScreen(
+                    onRegisterSuccess = {
+                        startActivity(Intent(this, MainActivity::class.java))
+                        finish()
+                    },
+                    onLoginClick = {
+                        startActivity(Intent(this, LoginActivity::class.java))
+                        finish()
+                    },
+                    auth = auth,
+                    database = database
+                )
+            }
         }
     }
 }
@@ -171,7 +174,8 @@ fun RegisterScreen(
                                                     Toast.makeText(context, "Error al guardar datos: ${it.message}", Toast.LENGTH_SHORT).show()
                                                 }
                                         } else {
-                                            Toast.makeText(context, "Error: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                                            Log.e("RegisterActivity", "Register error: ", task.exception)
+                                            Toast.makeText(context, "Error SignUP: ${task.exception?.message}", Toast.LENGTH_LONG).show()
                                         }
                                     }
                             }
