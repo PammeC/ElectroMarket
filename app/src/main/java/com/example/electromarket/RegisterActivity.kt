@@ -33,7 +33,7 @@ class RegisterActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         auth = FirebaseAuth.getInstance()
-        database = FirebaseDatabase.getInstance()
+        database = FirebaseDatabase.getInstance("https://electromarketdb-9cefc-default-rtdb.firebaseio.com/")
 
         setContent {
             RegisterScreen(

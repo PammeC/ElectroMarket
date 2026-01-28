@@ -60,7 +60,7 @@ class LoginActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         auth = FirebaseAuth.getInstance()
-        database = FirebaseDatabase.getInstance().reference
+        database = FirebaseDatabase.getInstance("https://electromarketdb-9cefc-default-rtdb.firebaseio.com/").reference
         callbackManager = CallbackManager.Factory.create()
         credentialManager = CredentialManager.create(this)
 
