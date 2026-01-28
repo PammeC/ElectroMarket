@@ -50,7 +50,7 @@ class LoginActivity : ComponentActivity() {
     private lateinit var callbackManager: CallbackManager
     private lateinit var credentialManager: CredentialManager
     private val WEB_CLIENT_ID =
-        "992405554372-5uaceinqrbrfpa0l8t51h2su7bjk3ada.apps.googleusercontent.com"
+        "204657652430-ctfi8vpj2sbvrd415f51j4q6oteigkkd.apps.googleusercontent.com"
     private val nonce = "random_nonce_string"
 
     private lateinit var auth: FirebaseAuth
