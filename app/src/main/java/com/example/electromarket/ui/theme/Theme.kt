@@ -1,4 +1,4 @@
-package com.example.defructas.ui.theme
+package com.example.electromarket.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -30,7 +30,7 @@ private val LightColorScheme = lightColorScheme(
 )
 
 @Composable
-fun DeFructasTheme(
+fun ElectroMarketTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     dynamicColor: Boolean = false, // 🚫 MUY IMPORTANTE
     content: @Composable () -> Unit

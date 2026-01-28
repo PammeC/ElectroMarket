@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:992405554372:android:dcd17a0064da4c2028b591",
         "android_client_info": {
-          "package_name": "com.example.defructas"
+          "package_name": "com.example.electromarket"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "992405554372-u55ikakvng620a52a7m66er7roruhc6t.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.defructas",
+            "package_name": "com.example.electromarket",
             "certificate_hash": "431567d0e3b5c58e63d7c84232721d8a793107e9"
           }
         },

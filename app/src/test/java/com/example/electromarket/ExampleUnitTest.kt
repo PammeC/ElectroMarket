@@ -1,4 +1,4 @@
-package com.example.defructas
+package com.example.electromarket
 
 import org.junit.Test
 

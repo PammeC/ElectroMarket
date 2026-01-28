@@ -1,4 +1,4 @@
-package com.example.defructas
+package com.example.electromarket
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -1,4 +1,4 @@
-package com.example.defructas.ui.theme
+package com.example.electromarket.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

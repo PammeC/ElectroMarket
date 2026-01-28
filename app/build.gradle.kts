@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.defructas"
+    namespace = "com.example.electromarket"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.defructas"
+        applicationId = "com.example.electromarket"
         minSdk = 26
         targetSdk = 35
         versionCode = 1
@@ -45,9 +45,9 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
@@ -59,6 +59,14 @@ dependencies {
     implementation(libs.firebase.database.ktx)
     implementation(libs.googleid)
     implementation(libs.androidx.navigation.runtime.android)
+    implementation(libs.androidx.navigation.compose.jvmstubs)
+
+    // Credenciales y Auth
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
+    implementation(libs.play.services.auth)
+    implementation(libs.facebook.login)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -66,14 +74,7 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    
     implementation(platform("com.google.firebase:firebase-bom:33.16.0"))
     implementation("com.google.firebase:firebase-analytics")
-    implementation("com.facebook.android:facebook-login:latest.release")
-    implementation("androidx.credentials:credentials:<latest version>")
-    implementation("androidx.credentials:credentials-play-services-auth:<latest version>")
-    implementation("com.google.android.libraries.identity.googleid:googleid:<latest version>")
-    implementation("com.google.android.gms:play-services-auth:21.0.0")
-    implementation("androidx.compose.ui:ui-android:1.8.3")
-    implementation("androidx.navigation:navigation-compose:2.7.7")
-    implementation ("androidx.compose.material3:material3:1.1.0")  // o versión más reciente
 }
