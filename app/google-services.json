@@ -1,45 +1,26 @@
 {
   "project_info": {
-    "project_number": "992405554372",
-    "firebase_url": "https://defructas-74572-default-rtdb.firebaseio.com",
-    "project_id": "defructas-74572",
-    "storage_bucket": "defructas-74572.firebasestorage.app"
+    "project_number": "204657652430",
+    "project_id": "electromarketdb-9cefc",
+    "storage_bucket": "electromarketdb-9cefc.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:992405554372:android:dcd17a0064da4c2028b591",
+        "mobilesdk_app_id": "1:204657652430:android:d8ba8394ae2370b952569f",
         "android_client_info": {
           "package_name": "com.example.electromarket"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "992405554372-u55ikakvng620a52a7m66er7roruhc6t.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.electromarket",
-            "certificate_hash": "431567d0e3b5c58e63d7c84232721d8a793107e9"
-          }
-        },
-        {
-          "client_id": "992405554372-5uaceinqrbrfpa0l8t51h2su7bjk3ada.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAhRn6csPf9xpZHQeAPNKhHvfIfQ168yK4"
+          "current_key": "AIzaSyAQGku0vFawe2MQau2Wgou1OGG72s7ZWDw"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "992405554372-5uaceinqrbrfpa0l8t51h2su7bjk3ada.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

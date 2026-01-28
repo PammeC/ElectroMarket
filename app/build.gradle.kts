@@ -75,6 +75,6 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
     
-    implementation(platform("com.google.firebase:firebase-bom:33.16.0"))
+    implementation(platform("com.google.firebase:firebase-bom:34.8.0"))
     implementation("com.google.firebase:firebase-analytics")
 }
